@@ -13,4 +13,7 @@ class ScreenManagerDef:
         if self.fullScreen: pygame.display.toggle_fullscreen()
 
     def blit(self, Surface, X, Y): self.screen.blit(Surface, (X,Y))
+
+    def flip(self): self.screen.flip()
+
     
