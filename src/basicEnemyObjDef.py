@@ -50,4 +50,28 @@ class BasicEnemyClassObjDef:
         self.move()
 
     def move(self):
-        pass #Add move method from player class here, possible tweaks needed.
+        if self.direction == 0: self.y -= self.speed #Straight up
+        if self.direction == 90: self.x += self.speed #Right
+        if self.direction == 180: self.y += self.speed #Down
+        if self.direction == 270: self.x -= self.speed #Left
+
+        if self.direction == 45:
+            self.x += self.speed/2
+            self.y -= self.speed/2
+        if self.direction == 135:
+            self.x += self.speed/2
+            self.y += self.speed/2
+        if self.direction == 225:
+            self.x -= self.speed/2
+            self.y += self.speed/2
+        if self.direction == 315:
+            self.x -= self.speed/2
+            self.y -= self.speed/2
+
+
+    def update(self):
+        if self.health > self.maxHealth: self.health = self.maxHealth
+        if self.speed < 0: print("ERROR: NEGATIVE SPEED")
+
+        self.AI()
+        
